@@ -1,0 +1,408 @@
+/* =========================================
+   VARIABEL WARNA KUSTOM
+   ========================================= */
+:root {
+    --primary-color: #6B21A8;    /* Ungu Access Media */
+    --secondary-color: #10B981;  /* Hijau Access Media */
+    --text-color: #1F2937;
+    --light-color: #FFFFFF;
+    --overlay-color: rgba(0, 0, 0, 0.6); /* Overlay Hero */
+    --font-main: 'Inter', sans-serif;
+}
+
+/* =========================================
+   RESET CSS & DASAR Halaman
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Gulir Halus */
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: #F9FAFB;
+}
+
+body.dark-theme {
+    color-scheme: dark;
+    color: #e5e7eb;
+    background-color: #111827;
+}
+
+body.dark-theme header,
+body.dark-theme #mobileMenu {
+    background-color: rgba(17, 24, 39, 0.96);
+    border-color: #374151;
+}
+
+body.dark-theme .bg-white {
+    background-color: #1f2937;
+}
+
+body.dark-theme .bg-brand-lightBg {
+    background-color: #111827;
+}
+
+body.dark-theme .bg-gray-50 {
+    background-color: #374151;
+}
+
+body.dark-theme .bg-gray-100,
+body.dark-theme .bg-purple-50 {
+    background-color: #374151;
+}
+
+body.dark-theme .bg-purple-100,
+body.dark-theme .bg-emerald-50 {
+    background-color: #374151;
+}
+
+body.dark-theme .text-gray-900,
+body.dark-theme .text-gray-800,
+body.dark-theme .text-gray-700 {
+    color: #f3f4f6;
+}
+
+body.dark-theme .text-gray-600,
+body.dark-theme .text-gray-500 {
+    color: #d1d5db;
+}
+
+body.dark-theme .border-gray-50,
+body.dark-theme .border-gray-100,
+body.dark-theme .border-gray-200,
+body.dark-theme .border-gray-800 {
+    border-color: #4b5563;
+}
+
+body.dark-theme .nav-btn.text-brand-purple {
+    color: #d8b4fe;
+}
+
+body.dark-theme .nav-btn.bg-purple-50,
+body.dark-theme .hover\:bg-gray-50:hover {
+    background-color: #374151;
+}
+
+body.dark-theme .text-brand-purple {
+    color: #d8b4fe;
+}
+
+body.dark-theme .text-brand-green {
+    color: #6ee7b7;
+}
+
+body.dark-theme .bg-purple-50.text-brand-purple,
+body.dark-theme .bg-purple-100.text-brand-purple {
+    color: #e9d5ff;
+    background-color: #4c1d95;
+}
+
+body.dark-theme .bg-emerald-50.text-brand-green,
+body.dark-theme .bg-emerald-100.text-brand-green {
+    color: #6ee7b7;
+    background-color: #064e3b;
+}
+
+body.dark-theme .nav-btn[aria-current="location"] {
+    color: #f3e8ff;
+    background-color: #4c1d95;
+    box-shadow: 0 0 0 1px #7e22ce;
+}
+
+body.dark-theme #mobileMenu a[aria-current="location"] {
+    color: #f3e8ff;
+    background-color: #4c1d95;
+    border-radius: 0.5rem;
+    padding-inline: 0.75rem;
+}
+
+body.dark-theme header img[alt="Logo Access Media"] {
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    background-color: #f9fafb;
+}
+
+body.dark-theme .client-card > div {
+    background-color: #f9fafb;
+    border-color: #e5e7eb;
+}
+
+body.dark-theme footer .bg-white {
+    background-color: #ffffff;
+}
+
+body.dark-theme #applicationDialog {
+    color: #e5e7eb;
+    background-color: #1f2937;
+}
+
+.theme-toggle {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #e5e7eb;
+    border-radius: 9999px;
+    color: #374151;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: color 200ms, background-color 200ms, border-color 200ms;
+}
+
+.theme-toggle:hover {
+    background-color: #f3f4f6;
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid #6B21A8;
+    outline-offset: 2px;
+}
+
+body.dark-theme .theme-toggle {
+    color: #f3f4f6;
+    background-color: #374151;
+    border-color: #4b5563;
+}
+
+body.dark-theme .theme-toggle:hover {
+    background-color: #4b5563;
+}
+
+section[id] {
+    scroll-margin-top: 5rem;
+}
+
+.application-dialog {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+}
+
+.app-card {
+    width: 100%;
+}
+
+.app-card[hidden] {
+    display: none;
+}
+
+.client-marquee {
+    overflow: hidden;
+    width: 100%;
+    padding: 0.75rem 0;
+}
+
+.client-track {
+    display: flex;
+    width: max-content;
+    animation: clientMarquee 32s linear infinite;
+    will-change: transform;
+}
+
+.client-track-group {
+    display: flex;
+    gap: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.client-card {
+    flex: 0 0 180px;
+}
+
+@keyframes clientMarquee {
+    to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .client-track {
+        animation: none;
+    }
+}
+
+.container {
+    max-width: 1200px; /* Lebar maksimal konten */
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+/* =========================================
+   GAYA UNTUK BAGIAN HERO (ATAS)
+   ========================================= */
+.hero-section {
+    background-image: url('handshake.jpg'); /* Ganti dengan nama file gambar jabat tangan Anda */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Tinggi penuh layar */
+    color: var(--light-color);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Overlay Gelap di Atas Gambar Latar */
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-color);
+    z-index: 1;
+}
+
+/* --- Gaya Header & Navigasi --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo img {
+    height: 40px; /* Atur tinggi logo */
+    width: auto;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--light-color);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav a:hover, .nav a.active {
+    color: var(--secondary-color); /* Ubah ke warna sekunder saat hover atau aktif */
+}
+
+/* --- Gaya Konten Hero --- */
+.hero-content {
+    flex-grow: 1; /* Konten memenuhi sisa ruang di tengah */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.hero-content h1 .highlight {
+    color: var(--secondary-color); /* kemudahan (warna sekunder) */
+}
+
+.hero-content h1 .bold {
+    font-weight: 900;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 700px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #581c87; /* Ungu lebih gelap saat hover */
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   GAYA UNTUK BAGIAN LAYANAN (BAWAH)
+   ========================================= */
+.services-section {
+    margin-top: -100px; /* Membuat section ini melayang di atas hero section */
+    position: relative;
+    z-index: 20; /* Lebih tinggi dari overlay hero */
+    padding-bottom: 50px;
+}
+
+/* Grid untuk 5 Kolom Kartu */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+/* Gaya Kartu Layanan */
+.service-card {
+    background-color: var(--light-color);
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Gaya Ikon di Dalam Kartu */
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(16, 185, 129, 0.1); /* Latar hijau pudar */
+    color: var(--secondary-color); /* Ikon warna hijau */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Modifikasi Ikon Warna Ungu (seperti di gambar) */
+.icon-box.purple {
+    background-color: rgba(107, 33, 168, 0.1); /* Latar ungu pudar */
+    color: var(--primary-color); /* Ikon warna ungu */
+}
+
+.service-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.3;
+}
